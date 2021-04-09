@@ -5,29 +5,47 @@
 //#include <ncurses.h> //For Linux
 #include <cstdlib>
 #include <array>
+#include <iterator>
 
 using namespace std;
 
 int main(){
     char newLetra[1] = {};
-    array<char, 10> array1 = {};
-    array<char, 10> array2 = {};
+    array<char, 10> array1 = {'A', 'A', 'A', 'A', 'Q', 'E', 'T', 'F', 'H', 'X'};
+    array<char, 10> array2 = {'A', 'A', 'A', 'W', 'R', 'A', 'D', 'S', 'H', 'X'};
+    array<char, 10> array3 = {};
+    array<char, 10> array4 = {};
+    char dato[1] = {};
+    char salida[1] = {};
+    cout << endl;
+    bool yes = false;
 
-    for(int i = 0; i < array1.size(); i++){
-        cout << "Ingresa el elemento " << i+1 << " del array-1: ";
-        cin >> newLetra[i];
-        newLetra[0] = toupper(0);
-        array1[i] = newLetra[i];
+    cout << "**************************************************" << endl;
 
-        cout << "Ingresa el elemento " << i+1 << " del array-2: ";
-        cin >> newLetra[i];
-        newLetra[0] = toupper(0);
-        array2[i] = newLetra[i];
+    for (int i = 0; i < 10; i++) {
+       for (int j = 0; j <= i; j++) {
+           if(array1[i] == array2[j]){
+                dato[0] = array1[i];
+                if(dato[0] != array1[i+1]){
+                    array3[i] = dato[0];
+                    salida[0] = dato[0];
+                    cout << salida[0] << endl;
+                }
+                
+           }
+       } 
     }
 
-    for(auto x : array1)
-        cout << x << endl;
-    
+
+
+    cout << "**************************************************" << endl;
+
+    for(auto x : array3)
+        if(x != ' '){
+            cout << x << endl;
+        }
+
+   
     system("pause");
     return 0;
 }
