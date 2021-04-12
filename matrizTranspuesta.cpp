@@ -1,3 +1,4 @@
+//Matriz transpuesta: cambiar las filas a columnas y viceverza
 #include <iostream>
 
 
